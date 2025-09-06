@@ -4,6 +4,7 @@ import TextInputComponent from "./components/TextInputComponent";
 import FlatListComponent from "./components/FlatListComponent";
 import ButtonComponent from "./components/ButtonComponent";
 import ModalComponent from "./components/ModalComponent";
+import styles from "./components/styles";
 
 export default function App() {
   const [tarefas, setTarefas] = useState([]);
@@ -11,6 +12,12 @@ export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
   const [tarefaEditando, setTarefaEditando] = useState(null);
 
+  // Chamando o Styles
+  <View style={styles.container}>
+  <View style={styles.card}>
+    <Text style={styles.titulo}> Lista de Tarefas</Text>
+  </View>
+</View>
   // adicionar
   const adicionarTarefa = (texto) => {
     if (texto.trim() === "") return;
@@ -38,7 +45,7 @@ export default function App() {
     setModalVisible(false);
   };
 
-  // filtrar
+  // consultar
   const tarefasFiltradas = tarefas.filter(t => {
     if (filtro === "Pendentes") return !t.concluida;
     if (filtro === "Concluídas") return t.concluida;

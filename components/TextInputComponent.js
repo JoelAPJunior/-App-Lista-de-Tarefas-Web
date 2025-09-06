@@ -7,7 +7,7 @@ export default function TextInputComponent({ onAdd }) {
   return (
     <View>
       <TextInput 
-        placeholder="Nova tarefa..."
+        placeholder="Digite aqui o nome da tarefa..."
         value={texto}
         onChangeText={setTexto}
       />
